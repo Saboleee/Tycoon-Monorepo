@@ -12,7 +12,25 @@ export const metadata: Metadata = generateBaseMetadata({
 
 export default function PrivacyPolicyPage(): JSX.Element {
   return (
-    <main className="min-h-screen bg-[var(--tycoon-bg)]">
+    <main
+      className="min-h-screen bg-[var(--tycoon-bg)]"
+      aria-labelledby="privacy-policy-title"
+    >
+      <a
+        href="#privacy-policy-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-[var(--tycoon-accent)] focus:px-4 focus:py-2 focus:outline-none focus:ring-2 focus:ring-[var(--tycoon-accent)] focus:ring-offset-2"
+      >
+        Skip to privacy policy
+      </a>
+
+      <div
+        id="privacy-policy-status"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      />
+
       {/* Header */}
       <div className="border-b border-[var(--tycoon-border)] bg-[var(--tycoon-card-bg)]/50 backdrop-blur-sm">
         <div className="mx-auto max-w-3xl px-4 py-6 sm:px-6 lg:px-8">
@@ -22,11 +40,16 @@ export default function PrivacyPolicyPage(): JSX.Element {
               size="sm"
               className="text-[var(--tycoon-text)] hover:bg-[var(--tycoon-border)]"
             >
-              <ArrowLeft className="h-4 w-4 mr-2" />
+              <ArrowLeft className="h-4 w-4 mr-2" aria-hidden="true" />
               Back to Settings
             </Button>
           </Link>
-          <h1 className="mt-4 text-3xl font-bold text-[var(--tycoon-text)]">Privacy Policy</h1>
+          <h1
+            id="privacy-policy-title"
+            className="mt-4 text-3xl font-bold text-[var(--tycoon-text)]"
+          >
+            Privacy Policy
+          </h1>
           <p className="mt-2 text-sm text-[var(--tycoon-text)]/60">
             Last updated: March 30, 2026
           </p>
@@ -34,7 +57,10 @@ export default function PrivacyPolicyPage(): JSX.Element {
       </div>
 
       {/* Content */}
-      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+      <div
+        id="privacy-policy-content"
+        className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8"
+      >
         <div className="prose prose-invert max-w-none space-y-6 text-[var(--tycoon-text)]">
           <section>
             <h2 className="text-2xl font-bold text-[var(--tycoon-accent)]">1. Introduction</h2>
